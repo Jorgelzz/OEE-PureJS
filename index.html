@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard OEE</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script defer src="script.js"></script>
+</head>
+<body class="text-bg-primary">
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">Monitoramento OEE</h1>
+        
+        <!-- Indicadores OEE -->
+        <div class="row text-center">
+            <div class="col-md-4">
+                <div class="card shadow-sm p-3">
+                    <h5>Disponibilidade</h5>
+                    <h2 id="availability" class="text-primary">--%</h2>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm p-3">
+                    <h5>Performance</h5>
+                    <h2 id="productivity" class="text-success">--%</h2>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm p-3">
+                    <h5>Qualidade</h5>
+                    <h2 id="quality" class="text-danger">--%</h2>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container text-center p-5 position-absolute">
+                <button type="button" class="btn btn-info" >Gerar OEE</button>
+        </div>
+        <!-- Gráfico OEE -->
+        <div class="mt-4">
+            <canvas id="oeeChart"></canvas>
+        </div>
+
+        <!-- Tabela de Dados -->
+        <div class="mt-4">
+            <h3 class="text-center">Histórico de Produção</h3>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Disponibilidade</th>
+                        <th>Performance</th>
+                        <th>Qualidade</th>
+                        <th>OEE Total</th>
+                    </tr>
+                </thead>
+                <tbody id="tabelaOEE">
+                    <!-- Dados dinâmicos aqui -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
